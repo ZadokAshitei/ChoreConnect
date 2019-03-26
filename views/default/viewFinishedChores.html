@@ -1,0 +1,70 @@
+{{extend 'masterTemplate.html'}}
+
+<div class="card card-tasks">
+  <div class="card-header ">
+    <div class="row">
+      <div class="col-5">
+        <h4 class="card-title mt-2">Chores Completed</h4>
+      </div>
+      <div class="col-7 text-right">
+        <a href="{{=URL('addChore')}}">
+          <button type="button" class="btn btn-danger">
+            Add New Chore
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card-body ">
+    <table class="table">
+      <tbody>
+        {{if chores:}}
+        {{for chores in chores:}}
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col-4">
+                <a href="{{=URL('choreNotFinished', args=chores.id)}}">
+                  <button type="button" class="btn btn-danger btn-sm">
+                    <span class="fa fa-reply"></span>
+                    Mark as incomplete
+                  </button>
+                </a>
+              </div>
+              <div class="col text-center m-auto">
+                {{=chores.choreName}}
+              </div>
+            </div>
+
+          </td>
+          <td class="text-right">
+
+            <div class="btn-group">
+              <a href="{{=URL('viewChore', args=chores.id)}}">
+                <button type="button" class="btn btn-simple ">
+                  <i class="fa fa-eye" style="color:green;"></i>
+                </button>
+              </a>
+
+              <a href="{{=URL('editChore', args=chores.id)}}">
+                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-simple">
+                  <i class="fa fa-edit" style="color:blue;"></i>
+                </button>
+              </a>
+
+              <a href="{{=URL('deleteChore', args=chores.id)}}">
+                <button type="button" rel="tooltip" title="Remove" class="btn btn-simple">
+                  <i class="fa fa-times" style="color:red;"></i>
+                </button>
+              </a>
+            </div>
+
+          </td>
+        </tr>
+        {{pass}}
+        {{pass}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

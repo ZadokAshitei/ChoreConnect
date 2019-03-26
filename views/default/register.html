@@ -1,0 +1,37 @@
+{{extend 'login-template.html'}}
+<div class="container-fluid">
+  <div class="row h-100">
+    <div class="col"></div>
+    <div class="col-4 m-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center w-75 m-auto " style="border-bottom:3px solid black;">Register</h1>
+          <form class="pt-3" action="{{=URL('registerProcess')}}" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="lastName" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="email" placeholder=" Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="address" placeholder="Address" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" name="button" class="btn btn-primary btn-block ">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

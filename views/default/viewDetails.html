@@ -1,0 +1,50 @@
+{{extend 'publicMasterLayout.html'}}
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        <h4>Chore Details</h4>
+        {{=chore.custom.begin}}
+
+        <div class="form-group">
+          <p>
+
+            <strong>Chore</strong>: {{=chore.custom.inpval['choreName']}} <br>
+            <strong>Description</strong>: {{=chore.custom.inpval['choreDescription']}} <br>
+            <strong>Price</strong>: {{=chore.custom.inpval['chorePrice']}} <br>
+            <strong>Duration</strong>: {{=chore.custom.inpval['choreDuration']}} <br>
+            <strong>Chore</strong>: {{=chore.custom.inpval['choreLocation']}} <br>
+          </p>
+        </div>
+
+        {{=chore.custom.end}}
+
+        <h4>Posted by</h4>
+        {{=user.custom.begin}}
+        <div class="form-group">
+          <p>
+            <strong>User</strong>:{{=user.custom.inpval['first_name']}} {{=user.custom.inpval['last_name']}} <br>
+            <strong>Email</strong>:{{=user.custom.inpval['email']}} <br>
+            <strong>Phone</strong>:{{=user.custom.inpval['phone']}} <br>
+            <strong>Address</strong>:{{=user.custom.inpval['address']}}
+          </p>
+        </div>
+
+        {{=user.custom.end}}
+
+        <a href="{{=URL('index')}}" class="m-1">
+          <button type="button" class="btn btn-secondary">
+            <span class="fa fa-"></span>
+            Back
+          </button>
+        </a>
+
+      </div>
+      <div class="col"></div>
+
+    </div>
+
+
+  </div>
+</div>

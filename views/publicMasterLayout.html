@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>ChoreConnect</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}" />
+  <!-- <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="{{=URL('static','css/light-bootstrap-dashboard.css')}}" />
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark " sy>
+        <div class=" container-fluid  ">
+          <a class="navbar-brand" href=""> ChoreConnect</a>
+          <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            {{if 'auth' in globals():}}
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{=URL('dashboard')}}">
+                  Hi,{{if auth.user:}}{{=auth.user.first_name}}{{else:}}LOGIN{{pass}}
+                </a>
+              </li>
+              <li class="nav-item">
+                {{if auth.user:}}
+                <a class="nav-link" href="{{=URL('userProfile')}}">{{=T('Profile')}}</a>
+                {{pass}}
+              </li>
+
+            </ul>
+            {{pass}}
+          </div>
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div style="background-color:#FB404B; height:100vh; ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-md-10">
+              {{include}}
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+
+        </div>
+      </footer>
+
+  </div>
+  <!--   -->
+
+</body>
+<!--   Core JS Files   -->
+<script src="{{=URL('static','js/jquery.3.2.1.min.js')}}"></script>
+<script src="{{=URL('static','js/popper.min.js')}}"></script>
+<script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+
+
+</html>

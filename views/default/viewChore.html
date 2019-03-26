@@ -1,0 +1,27 @@
+{{extend 'masterTemplate.html'}}
+<div class="card col-6">
+  <div class="card-body">
+    <h4>Chore Details</h4>
+    {{=form.custom.begin}}
+
+    <div class="form-group">
+      <p>
+
+        <strong>Chore</strong>: {{=form.custom.inpval['choreName']}} <br>
+        <strong>Description</strong>: {{=form.custom.inpval['choreDescription']}} <br>
+        <strong>Price</strong>: {{=form.custom.inpval['chorePrice']}} <br>
+        <strong>Duration</strong>: {{=form.custom.inpval['choreDuration']}} <br>
+        <strong>Chore</strong>: {{=form.custom.inpval['choreLocation']}} <br>
+      </p>
+    </div>
+
+    {{=form.custom.end}}
+
+    <a href="{{=URL('dashboard')}}" class="m-1">
+      <button type="button" class="btn btn-secondary">
+        <span class="fa fa-"></span>
+        Back
+      </button>
+    </a>
+  </div>
+</div>

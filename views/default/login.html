@@ -1,0 +1,26 @@
+{{extend 'login-template.html'}}
+
+<div class="container-fluid">
+  <div class="row h-100">
+    <div class="col"></div>
+    <div class="col-4 m-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center w-75 m-auto" style="border-bottom:3px solid black;">Login</h1>
+          <form class="pt-3" action="{{=URL('loginProcess')}}" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" name="button" class="btn btn-primary btn-block ">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

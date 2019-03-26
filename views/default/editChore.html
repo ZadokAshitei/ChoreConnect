@@ -1,0 +1,51 @@
+{{extend 'masterTemplate.html'}}
+<div class="container-fluid">
+  <div class="row h-100">
+    <div class="col"></div>
+    <div class="col-8 m-auto">
+      <div class="text-center">
+        {{=form.custom.begin}}
+
+        <div class="form-group">
+          <input type="string" class="form-control" name="choreName" placeholder="What chore do you want done?" value="{{=form.custom.inpval['choreName']}}" required>
+
+        </div>
+
+        <div class="form-group">
+          <!-- <input type="text" class="form-control" name="choreDescription" placeholder="Describe the chore as much as you can" value="{{=form.custom.inpval['choreDescription']}}" required> -->
+          <textarea class="form-control" name="choreDescription" placeholder="Describe the chore as much as you can" value="{{=form.custom.inpval['choreDescription']}}" required rows="8"></textarea>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="choreDuration" placeholder="How long is the chore?" value="{{=form.custom.inpval['choreDuration']}}" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="choreLocation" placeholder="Where are you?" value="{{=form.custom.inpval['choreLocation']}}" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="chorePrice" placeholder="How much are you willing to pay?" value="{{=form.custom.inpval['chorePrice']}}" required>
+        </div>
+
+
+        <div class="row">
+          <div class="col-6">
+            <button type="submit" class="btn w-100">Update</button>
+          </div>
+          <div class="col-6">
+            <a href="{{=URL('dashboard')}}" class="m-1">
+              <button type="button" class="btn btn-secondary w-100">
+                <span class="fa fa-"></span>
+                Back
+              </button>
+            </a>
+          </div>
+        </div>
+
+        {{=form.custom.end}}
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
